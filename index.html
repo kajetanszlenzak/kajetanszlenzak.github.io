@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kajetan Szlenzak | Junior Fullstack Developer</title>
+<meta name="author" content="Kajetan Szlenzak">
+<meta name="description" content="Junior Fullstack Developer based in Poznań, Poland. Angular, NestJS, TypeScript. Fullstack developer at Wilda Software.">
+<meta property="og:title" content="Kajetan Szlenzak | Junior Fullstack Developer">
+<meta property="og:description" content="Junior Fullstack Developer based in Poznań. Angular, NestJS, TypeScript.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://kajetanszlenzak.github.io/">
+<link rel="canonical" href="https://kajetanszlenzak.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💻</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F2F4F7;
+    --surface: #E7EBF0;
+    --ink: #18202B;
+    --muted: #5B6474;
+    --rule: #D5DAE1;
+    --accent: #C8213A;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+    box-sizing: border-box;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #12171E; --surface: #1A212B; --ink: #E8ECF1; --muted: #9AA4B2; --rule: #29323E; --accent: #FF5A6E;
+    }
+  }
+  :root[data-theme="dark"] {
+    --paper: #12171E; --surface: #1A212B; --ink: #E8ECF1; --muted: #9AA4B2; --rule: #29323E; --accent: #FF5A6E;
+  }
+  *, *::before, *::after { box-sizing: inherit; }
+  html { scroll-behavior: smooth; scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 4.5rem); }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font: 400 1.0625rem/1.6 var(--body);
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 0.2em; text-decoration-thickness: 2px; }
+  a:hover { color: var(--accent); }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+
+  /* Nav */
+  .nav {
+    position: sticky; top: 0; z-index: 10;
+    padding-top: env(safe-area-inset-top, 0px);
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+  }
+  .nav-inner {
+    max-width: 52rem; margin: 0 auto; padding: 0.9rem 1.5rem;
+    display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  }
+  .logo { font-family: var(--mono); font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .logo span { color: var(--accent); }
+  .nav ul { display: flex; gap: 1.25rem; margin: 0; padding: 0; list-style: none; font-family: var(--mono); font-size: 0.9rem; overflow-x: auto; }
+  .nav ul a { text-decoration: none; color: var(--muted); }
+  .nav ul a:hover { color: var(--accent); }
+
+  main { max-width: 52rem; margin: 0 auto; padding: 0 1.5rem 4rem; }
+
+  /* Hero */
+  .hero { padding: 5rem 0 3.5rem; }
+  .hero .hello { font-family: var(--mono); color: var(--muted); margin: 0 0 1rem; }
+  .hero h1 {
+    font-family: var(--display); font-weight: 800;
+    font-size: clamp(3rem, 11vw, 6rem); line-height: 0.95; letter-spacing: -0.04em;
+    margin: 0 0 1.5rem;
+  }
+  .hero h1 .dot { color: var(--accent); }
+  .lede { font-size: 1.3rem; line-height: 1.45; max-width: 36rem; margin: 0 0 2rem; }
+  .actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+  .btn {
+    display: inline-block; padding: 0.7rem 1.2rem; border-radius: 6px;
+    font-family: var(--mono); font-size: 0.95rem; font-weight: 600; text-decoration: none;
+    border: 1.5px solid var(--ink);
+  }
+  .btn.primary { background: var(--ink); color: var(--paper); }
+  .btn.primary:hover { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:not(.primary):hover { border-color: var(--accent); }
+
+  /* Sections */
+  section { padding: 3.5rem 0; border-top: 1px solid var(--rule); }
+  .label { font-family: var(--mono); font-size: 0.9rem; color: var(--accent); margin: 0 0 0.5rem; }
+  h2 { font-family: var(--display); font-weight: 800; font-size: clamp(2rem, 6vw, 2.75rem); letter-spacing: -0.03em; line-height: 1.05; margin: 0 0 1.75rem; }
+  h3 { font-family: var(--display); font-weight: 600; font-size: 1.3rem; letter-spacing: -0.01em; margin: 0 0 0.25rem; }
+  h4 { font-family: var(--mono); font-size: 0.95rem; font-weight: 600; margin: 2rem 0 0.75rem; color: var(--muted); }
+  p { margin: 0 0 1rem; max-width: 40rem; }
+  .muted { color: var(--muted); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0; padding: 0; list-style: none; }
+  .chips li { font-family: var(--mono); font-size: 0.82rem; padding: 0.2rem 0.65rem; border: 1px solid var(--rule); border-radius: 999px; background: var(--surface); }
+  .chips li.key { border-color: var(--accent); }
+  .certs { margin: 0; padding-left: 1.1rem; }
+  .certs li { margin-bottom: 0.3rem; }
+
+  /* Timeline (experience, education) */
+  .timeline { list-style: none; margin: 0; padding: 0; border-left: 2px solid var(--rule); }
+  .timeline li { position: relative; padding: 0 0 2rem 1.5rem; }
+  .timeline li:last-child { padding-bottom: 0; }
+  .timeline li::before {
+    content: ""; position: absolute; left: -7px; top: 0.5rem;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--paper); border: 2px solid var(--muted);
+  }
+  .timeline li.current::before { background: var(--accent); border-color: var(--accent); }
+  .when { font-family: var(--mono); font-size: 0.85rem; color: var(--muted); margin: 0 0 0.6rem; }
+  .timeline ul { margin: 0.5rem 0 0.9rem; padding-left: 1.1rem; }
+  .timeline ul li { padding: 0; border: 0; }
+  .timeline ul li::before { display: none; }
+
+  /* Projects */
+  .projects { display: grid; gap: 1.25rem; }
+  .project { padding: 1.5rem; border: 1px solid var(--rule); border-radius: 10px; background: var(--surface); }
+  .project.featured { border-color: var(--accent); }
+  .project .when { margin-bottom: 0.75rem; }
+  .project ul.points { margin: 0 0 1rem; padding-left: 1.1rem; }
+  .project ul.points li { margin-bottom: 0.25rem; }
+  .project .chips { margin-bottom: 1rem; }
+  .project .link { font-family: var(--mono); font-size: 0.9rem; font-weight: 600; }
+  .status { color: var(--accent); }
+
+  /* Contact */
+  .contact h2 { font-size: clamp(2.5rem, 9vw, 4rem); }
+  footer { max-width: 52rem; margin: 0 auto; padding: 1.5rem; border-top: 1px solid var(--rule); font-family: var(--mono); font-size: 0.82rem; color: var(--muted); }
+
+  @media (max-width: 40rem) {
+    .nav-inner { flex-direction: column; align-items: flex-start; gap: 0.5rem; padding: 0.75rem 1.25rem; }
+    .nav ul { gap: 1rem; width: 100%; padding-bottom: 0.15rem; }
+    html { scroll-padding-top: calc(env(safe-area-inset-top, 0px) + 6rem); }
+    main { padding: 0 1.25rem 3rem; }
+    .hero { padding: 3rem 0 2.5rem; }
+    .project { padding: 1.25rem; }
+  }
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Main">
+  <div class="nav-inner">
+    <a class="logo" href="#top"><span>//</span> kajetanszlenzak</a>
+    <ul>
+      <li><a href="#about">about</a></li>
+      <li><a href="#experience">experience</a></li>
+      <li><a href="#projects">projects</a></li>
+      <li><a href="#education">education</a></li>
+      <li><a href="#contact">contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<main id="top">
+  <header class="hero">
+    <p class="hello">Hi, my name is</p>
+    <h1>Kajetan Szlenzak<span class="dot">.</span></h1>
+    <p class="lede">Junior Fullstack Developer based in Poznań, Poland. I build web applications with TypeScript, Angular and NestJS, and I like owning a feature end to end, from the database schema to the last button.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:kajetan.szlenzak@gmail.com">Get in touch</a>
+      <a class="btn" href="https://github.com/kajetanszlenzak">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/kajetan-szlenzak-b7473a26a/">LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="about" aria-labelledby="about-h">
+    <p class="label">01 — about</p>
+    <h2 id="about-h">About me</h2>
+    <p>I work as a Junior Fullstack Developer at Wilda Software, where I build and maintain web applications for external clients with Angular and NestJS. Day to day I integrate third-party services and APIs, talk with clients about requirements and technical solutions, and take part in architectural decisions.</p>
+    <p>The part of the stack I enjoy most is the backend, especially NestJS, but I'm just as comfortable on the frontend with Angular or React. After work and classes I keep building side projects, and I use AI tools every day for refactoring, writing tests and getting up to speed with new APIs.</p>
+    <p>Outside of code you'll find me at the gym, out running or on a padel court.</p>
+
+    <h4>Tech stack</h4>
+    <ul class="chips" aria-label="Tech stack">
+      <li class="key">TypeScript</li><li class="key">NestJS</li><li class="key">Angular</li>
+      <li>React</li><li>Node.js</li><li>Express</li><li>JavaScript</li><li>PHP</li><li>Yii2</li>
+      <li>C# / ASP.NET Core</li><li>Python</li><li>Tailwind CSS</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li>
+      <li>Docker</li><li>Git</li><li>REST APIs</li>
+    </ul>
+
+    <h4>Certifications</h4>
+    <ul class="certs">
+      <li>Cisco CCNA R&amp;S: Routing and Switching Essentials</li>
+      <li>IT Technician</li>
+      <li>IELTS Academic, English B2</li>
+    </ul>
+  </section>
+
+  <section id="experience" aria-labelledby="exp-h">
+    <p class="label">02 — experience</p>
+    <h2 id="exp-h">Work history</h2>
+    <ol class="timeline">
+      <li class="current">
+        <h3>Junior Fullstack Developer</h3>
+        <p class="when">Wilda Software, Poznań | Feb 2026 – present</p>
+        <ul>
+          <li>Developing and maintaining web applications with Angular and NestJS</li>
+          <li>Integrating third-party services and external APIs</li>
+          <li>Building and maintaining software solutions for external clients</li>
+          <li>Consulting with clients on requirements and technical solutions</li>
+          <li>Contributing to architectural decisions on application design</li>
+        </ul>
+        <ul class="chips" aria-label="Technologies used">
+          <li>Angular</li><li>NestJS</li><li>TypeScript</li><li>PHP</li><li>Yii2</li><li>PostgreSQL</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="projects" aria-labelledby="proj-h">
+    <p class="label">03 — projects</p>
+    <h2 id="proj-h">Projects</h2>
+    <div class="projects">
+      <article class="project featured">
+        <h3>Notion-style note &amp; finance manager</h3>
+        <p class="when"><span class="status">In progress</span> | Aug 2026 – present</p>
+        <p>A note-taking app with folders and a built-in personal finance tracker, so notes and budgets live in one place.</p>
+        <ul class="points">
+          <li>REST backend in NestJS with a PostgreSQL database</li>
+          <li>Angular frontend with a component library for consistent UI</li>
+          <li>Whole app containerized with Docker for one-command setup</li>
+        </ul>
+        <ul class="chips" aria-label="Tech stack"><li>Angular</li><li>NestJS</li><li>PostgreSQL</li><li>Docker</li></ul>
+        <span class="link muted">Source code coming soon</span>
+      </article>
+
+      <article class="project">
+        <h3>CS2 Item Tracker</h3>
+        <p class="when">Mar 2025 – May 2025 | team of 2</p>
+        <p>A dashboard for Counter-Strike 2 traders that tracks item purchases and sales and shows profit and loss over time.</p>
+        <ul class="points">
+          <li>REST API in Express 5 with JWT auth in HTTP-only cookies and bcrypt-hashed passwords</li>
+          <li>React 19 and TypeScript frontend with Zustand state and protected routes</li>
+          <li>Profit/loss statistics and charts, soft delete for item history and a seed script with demo data</li>
+        </ul>
+        <ul class="chips" aria-label="Tech stack"><li>React</li><li>TypeScript</li><li>Express</li><li>MongoDB</li><li>Tailwind CSS</li></ul>
+        <a class="link" href="https://github.com/kajetanszlenzak/cs2-item-tracker">View source on GitHub</a>
+      </article>
+
+      <article class="project">
+        <h3>Techwatchers</h3>
+        <p class="when">Dec 2024 – Jan 2025 | team of 2</p>
+        <p>A forum for tech enthusiasts where users publish posts in categories and like and comment on each other's posts.</p>
+        <ul class="points">
+          <li>Angular 19 frontend with separate views for the feed, post details, profile and auth</li>
+          <li>ASP.NET Core 8 REST API using the repository pattern and Entity Framework Core migrations</li>
+          <li>Session-based login with server-side validation of usernames, emails and passwords</li>
+        </ul>
+        <ul class="chips" aria-label="Tech stack"><li>Angular</li><li>TypeScript</li><li>ASP.NET Core</li><li>C#</li><li>MySQL</li></ul>
+        <a class="link" href="https://github.com/kajetanszlenzak/techwatchers">View source on GitHub</a>
+      </article>
+      <article class="project">
+        <h3>Steam Account Generator</h3>
+        <p class="when"><span class="muted">Archived</span> | 2023 – 2024 | 40+ stars on GitHub</p>
+        <p>A learning project from my early days, built to understand how web scraping and browser bots work. It automated a sign-up form in a real browser and became my first project that other people actually used.</p>
+        <ul class="points">
+          <li>Browser automation with Selenium: selectors, waits and form handling</li>
+          <li>CSV import and export with pandas and Discord webhook notifications</li>
+          <li>CAPTCHAs were handed off to a person instead of bypassed; the project stopped working when Steam tightened its security</li>
+        </ul>
+        <ul class="chips" aria-label="Tech stack"><li>Python</li><li>Selenium</li><li>pandas</li><li>Discord API</li></ul>
+        <a class="link" href="https://github.com/kajetanszlenzak/Steam-Account-Generator">View source on GitHub</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="education" aria-labelledby="edu-h">
+    <p class="label">04 — education</p>
+    <h2 id="edu-h">Education</h2>
+    <ol class="timeline">
+      <li class="current">
+        <h3>M.Sc. in Computer Science</h3>
+        <p class="when">WSB Merito University, Poznań | Mar 2026 – present</p>
+      </li>
+      <li>
+        <h3>B.Eng. in Computer Science</h3>
+        <p class="when">WSB Merito University, Poznań | Oct 2022 – Feb 2026</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="contact" class="contact" aria-labelledby="contact-h">
+    <p class="label">05 — contact</p>
+    <h2 id="contact-h">Let's talk.</h2>
+    <p>Open to fullstack and backend opportunities, especially with NestJS, and always happy to chat about side projects. Email is the fastest way to reach me.</p>
+    <div class="actions">
+      <a class="btn primary" href="mailto:kajetan.szlenzak@gmail.com">kajetan.szlenzak@gmail.com</a>
+      <a class="btn" href="https://www.linkedin.com/in/kajetan-szlenzak-b7473a26a/">LinkedIn</a>
+    </div>
+  </section>
+</main>
+
+<footer>© 2026 Kajetan Szlenzak | hosted on GitHub Pages</footer>
+</body>
+</html>
